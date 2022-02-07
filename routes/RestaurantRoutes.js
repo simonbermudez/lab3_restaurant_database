@@ -11,7 +11,7 @@ app.get('/', async (req, res) => {
         console.log(req.query.sortBy)
 
         if(req.query.sortBy) {
-            restaurants = await restaurantModel.find({}).sort({"_id": req.query.sortBy.toLowerCase()})
+            restaurants = await restaurantModel.find({}).sort({"restaurant_id": req.query.sortBy.toLowerCase()})
         } else {
             restaurants = await restaurantModel.find({})
         }
